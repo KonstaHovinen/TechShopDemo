@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TechShop — Premium Gear</title>
+  <meta name="description" content="Shop the latest premium tech and lifestyle products." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="header" id="header">
+    <div class="header__inner container">
+      <a href="index.html" class="logo">Tech<span>Shop</span></a>
+      <nav class="nav" id="nav">
+        <ul class="nav__list">
+          <li><a href="index.html" class="nav__link active">Products</a></li>
+          <li><a href="about.html" class="nav__link">About</a></li>
+          <li><a href="contact.html" class="nav__link">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header__actions">
+        <button class="cart-btn" id="cartBtn" aria-label="Open cart">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2 9m12-9l2 9M9 21a1 1 0 100-2 1 1 0 000 2zm6 0a1 1 0 100-2 1 1 0 000 2z"/></svg>
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- CART SIDEBAR -->
+  <aside class="cart-sidebar" id="cartSidebar">
+    <div class="cart-sidebar__header">
+      <h3>Your Cart</h3>
+      <button class="cart-close" id="cartClose">✕</button>
+    </div>
+    <div class="cart-items" id="cartItems">
+      <p class="cart-empty">Your cart is empty.</p>
+    </div>
+    <div class="cart-footer" id="cartFooter" style="display:none">
+      <div class="cart-total">Total: <strong id="cartTotal">€0.00</strong></div>
+      <a href="checkout.html" class="btn btn--primary btn--full">Checkout</a>
+      <button class="btn-ghost" id="clearCart">Clear cart</button>
+    </div>
+  </aside>
+  <div class="cart-overlay" id="cartOverlay"></div>
+
+  <!-- PRODUCTS + SIDEBAR LAYOUT -->
+  <div class="products-page container">
+
+    <!-- LEFT: CATEGORY SIDEBAR -->
+    <aside class="category-sidebar">
+      <h3 class="category-sidebar__title">Categories</h3>
+      <ul class="category-list">
+        <li>
+          <button class="category-btn active" data-filter="all">
+            <span class="category-btn__icon">🛍️</span>
+            All Products
+            <span class="category-btn__count">6</span>
+          </button>
+        </li>
+        <li>
+          <button class="category-btn" data-filter="Tech">
+            <span class="category-btn__icon">💻</span>
+            Tech
+            <span class="category-btn__count">3</span>
+          </button>
+        </li>
+        <li>
+          <button class="category-btn" data-filter="Lifestyle">
+            <span class="category-btn__icon">🌿</span>
+            Lifestyle
+            <span class="category-btn__count">2</span>
+          </button>
+        </li>
+        <li>
+          <button class="category-btn" data-filter="Apparel">
+            <span class="category-btn__icon">👕</span>
+            Apparel
+            <span class="category-btn__count">1</span>
+          </button>
+        </li>
+      </ul>
+    </aside>
+
+    <!-- RIGHT: PRODUCT GRID -->
+    <main class="products-main">
+      <div class="products-header">
+        <h2 class="section-title" id="categoryTitle">All Products</h2>
+        <p class="section-desc" id="categoryDesc">Premium picks, delivered to your door.</p>
+      </div>
+
+      <div class="product-grid" id="productGrid">
+
+        <div class="product-card" data-category="Tech">
+          <div class="product-card__media" style="background:linear-gradient(135deg,#1a1a2e,#16213e)">
+            <img src="images/product_watch.png" alt="SmartWatch Pro" loading="lazy" />
+            <span class="product-badge product-badge--hot">Hot</span>
+          </div>
+          <div class="product-card__body">
+            <span class="product-card__cat">Tech</span>
+            <h3 class="product-card__title">SmartWatch Pro</h3>
+            <div class="product-card__rating"><span class="stars">★★★★★</span><span class="rating-count">(128)</span></div>
+            <div class="product-card__price-row"><span class="price">€199.00</span><span class="price-old">€249.00</span></div>
+            <button class="btn btn--primary btn--sm add-to-cart" data-id="1" data-name="SmartWatch Pro" data-price="199.00">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="Tech">
+          <div class="product-card__media" style="background:linear-gradient(135deg,#0d0d0d,#1a1a1a)">
+            <div class="placeholder-product">🎧</div>
+            <span class="product-badge product-badge--new">New</span>
+          </div>
+          <div class="product-card__body">
+            <span class="product-card__cat">Tech</span>
+            <h3 class="product-card__title">NoiseOff Pro Headphones</h3>
+            <div class="product-card__rating"><span class="stars">★★★★★</span><span class="rating-count">(94)</span></div>
+            <div class="product-card__price-row"><span class="price">€149.00</span></div>
+            <button class="btn btn--primary btn--sm add-to-cart" data-id="2" data-name="NoiseOff Pro Headphones" data-price="149.00">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="Lifestyle">
+          <div class="product-card__media" style="background:linear-gradient(135deg,#2d1b69,#11082a)">
+            <div class="placeholder-product">🎒</div>
+          </div>
+          <div class="product-card__body">
+            <span class="product-card__cat">Lifestyle</span>
+            <h3 class="product-card__title">Urban Carry Backpack</h3>
+            <div class="product-card__rating"><span class="stars">★★★★☆</span><span class="rating-count">(57)</span></div>
+            <div class="product-card__price-row"><span class="price">€89.00</span><span class="price-old">€120.00</span></div>
+            <button class="btn btn--primary btn--sm add-to-cart" data-id="3" data-name="Urban Carry Backpack" data-price="89.00">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="Apparel">
+          <div class="product-card__media" style="background:linear-gradient(135deg,#0f3460,#16213e)">
+            <div class="placeholder-product">👕</div>
+            <span class="product-badge product-badge--sale">−20%</span>
+          </div>
+          <div class="product-card__body">
+            <span class="product-card__cat">Apparel</span>
+            <h3 class="product-card__title">Premium Tech Tee</h3>
+            <div class="product-card__rating"><span class="stars">★★★★★</span><span class="rating-count">(213)</span></div>
+            <div class="product-card__price-row"><span class="price">€39.00</span><span class="price-old">€49.00</span></div>
+            <button class="btn btn--primary btn--sm add-to-cart" data-id="4" data-name="Premium Tech Tee" data-price="39.00">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="Lifestyle">
+          <div class="product-card__media" style="background:linear-gradient(135deg,#1a2a1a,#2d4a2d)">
+            <div class="placeholder-product">🍶</div>
+          </div>
+          <div class="product-card__body">
+            <span class="product-card__cat">Lifestyle</span>
+            <h3 class="product-card__title">Thermo Bottle 500ml</h3>
+            <div class="product-card__rating"><span class="stars">★★★★☆</span><span class="rating-count">(76)</span></div>
+            <div class="product-card__price-row"><span class="price">€35.00</span></div>
+            <button class="btn btn--primary btn--sm add-to-cart" data-id="5" data-name="Thermo Bottle 500ml" data-price="35.00">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="Tech">
+          <div class="product-card__media" style="background:linear-gradient(135deg,#1c1c2e,#2d1b69)">
+            <div class="placeholder-product">⚡</div>
+            <span class="product-badge product-badge--new">New</span>
+          </div>
+          <div class="product-card__body">
+            <span class="product-card__cat">Tech</span>
+            <h3 class="product-card__title">MagCharge 65W Dock</h3>
+            <div class="product-card__rating"><span class="stars">★★★★★</span><span class="rating-count">(42)</span></div>
+            <div class="product-card__price-row"><span class="price">€79.00</span></div>
+            <button class="btn btn--primary btn--sm add-to-cart" data-id="6" data-name="MagCharge 65W Dock" data-price="79.00">Add to Cart</button>
+          </div>
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div>
+          <a href="index.html" class="logo">Tech<span>Shop</span></a>
+          <p>Based in Finland.</p>
+        </div>
+        <div class="footer__links">
+          <a href="index.html">Products</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2026 TechShop. Demo by Konsta Hovinen.</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast"></div>
+  <script src="main.js"></script>
+  <script>
+    // Category filtering
+    var categoryLabels = {
+      all:       { title: 'All Products',  desc: 'Premium picks, delivered to your door.' },
+      Tech:      { title: 'Tech',          desc: 'Gadgets and electronics for modern life.' },
+      Lifestyle: { title: 'Lifestyle',     desc: 'Everyday essentials, elevated.' },
+      Apparel:   { title: 'Apparel',       desc: 'Quality clothing built to last.' }
+    };
+
+    document.querySelectorAll('.category-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var filter = btn.dataset.filter;
+
+        // Update active state
+        document.querySelectorAll('.category-btn').forEach(function(b) {
+          b.classList.remove('active');
+        });
+        btn.classList.add('active');
+
+        // Update heading
+        var label = categoryLabels[filter] || categoryLabels['all'];
+        document.getElementById('categoryTitle').textContent = label.title;
+        document.getElementById('categoryDesc').textContent  = label.desc;
+
+        // Show/hide cards
+        document.querySelectorAll('.product-card[data-category]').forEach(function(card) {
+          if (filter === 'all' || card.dataset.category === filter) {
+            card.style.display = '';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Order Confirmed — TechShop</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="header scrolled">
+    <div class="header__inner container">
+      <a href="index.html" class="logo">Tech<span>Shop</span></a>
+    </div>
+  </header>
+
+  <section class="success-page">
+    <div class="container">
+      <div class="success-box">
+        <div class="success-icon">✓</div>
+        <h1 class="success-title">Order Confirmed!</h1>
+        <p class="success-sub">Thank you for your purchase. Your order is on its way.</p>
+        <div class="success-details">
+          <div class="success-detail-row">
+            <span>Order number</span>
+            <strong id="orderNum">#NB-000000</strong>
+          </div>
+          <div class="success-detail-row">
+            <span>Estimated delivery</span>
+            <strong id="deliveryDate">—</strong>
+          </div>
+          <div class="success-detail-row">
+            <span>Status</span>
+            <strong style="color:var(--clr-success)">Payment received ✓</strong>
+          </div>
+        </div>
+        <a href="index.html" class="btn btn--primary btn--lg" style="margin-top:32px;">Continue Shopping</a>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Generate random order number
+    const num = Math.floor(10000 + Math.random() * 90000);
+    document.getElementById('orderNum').textContent = '#NB-' + num;
+
+    // Estimated delivery: today + 3 days
+    const d = new Date();
+    d.setDate(d.getDate() + 3);
+    document.getElementById('deliveryDate').textContent = d.toLocaleDateString('en-GB', {
+      weekday: 'long', day: 'numeric', month: 'long'
+    });
+  </script>
+</body>
+</html>

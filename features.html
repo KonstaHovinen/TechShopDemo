@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Why Us — NovaByte</title>
+  <meta name="description" content="What makes NovaByte different — fast, mobile-first, secure, and conversion-focused." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="header" id="header">
+    <div class="header__inner container">
+      <a href="index.html" class="logo">Nova<span>Byte</span></a>
+      <nav class="nav" id="nav">
+        <ul class="nav__list">
+          <li><a href="index.html" class="nav__link">Products</a></li>
+          <li><a href="features.html" class="nav__link active">Why Us</a></li>
+          <li><a href="about.html" class="nav__link">About</a></li>
+          <li><a href="contact.html" class="nav__link">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header__actions">
+        <button class="cart-btn" id="cartBtn" aria-label="Open cart">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2 9m12-9l2 9M9 21a1 1 0 100-2 1 1 0 000 2zm6 0a1 1 0 100-2 1 1 0 000 2z"/></svg>
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- CART SIDEBAR -->
+  <aside class="cart-sidebar" id="cartSidebar">
+    <div class="cart-sidebar__header">
+      <h3>Your Cart</h3>
+      <button class="cart-close" id="cartClose">✕</button>
+    </div>
+    <div class="cart-items" id="cartItems">
+      <p class="cart-empty">Your cart is empty.</p>
+    </div>
+    <div class="cart-footer" id="cartFooter" style="display:none">
+      <div class="cart-total">Total: <strong id="cartTotal">€0.00</strong></div>
+      <a href="#" class="btn btn--primary btn--full">Checkout</a>
+      <button class="btn-ghost" id="clearCart">Clear cart</button>
+    </div>
+  </aside>
+  <div class="cart-overlay" id="cartOverlay"></div>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <div class="container">
+      <h1 class="page-hero__title">Why NovaByte</h1>
+      <p class="page-hero__subtitle">What makes us different from the rest.</p>
+    </div>
+  </div>
+
+  <!-- FEATURES -->
+  <section class="page-section">
+    <div class="container">
+      <div class="features-grid">
+        <div class="feature-card"><div class="feature-icon">🚀</div><h3>Lightning Fast</h3><p>Sub-second page loads. Zero friction from browse to buy.</p></div>
+        <div class="feature-card"><div class="feature-icon">📱</div><h3>Mobile-First</h3><p>Smooth checkout on any device, any screen size.</p></div>
+        <div class="feature-card"><div class="feature-icon">🔒</div><h3>Secure</h3><p>End-to-end encrypted payments. Your data stays safe.</p></div>
+        <div class="feature-card"><div class="feature-icon">📊</div><h3>Conversion-Focused</h3><p>A/B tested layouts and strategic CTAs to grow revenue.</p></div>
+        <div class="feature-card"><div class="feature-icon">🔧</div><h3>Custom Integrations</h3><p>Connect CRM, ERP, or any marketing tool seamlessly.</p></div>
+        <div class="feature-card"><div class="feature-icon">⭐</div><h3>Dedicated Support</h3><p>Real answers from real developers within 12 hours.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div>
+          <a href="index.html" class="logo">Nova<span>Byte</span></a>
+          <p>Premium eCommerce, built for conversion.<br/>Based in Turku, Finland.</p>
+        </div>
+        <div class="footer__links">
+          <a href="index.html">Products</a>
+          <a href="features.html">Why Us</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>© 2026 NovaByte Store. Demo by KV — ICT &amp; Business, Turku AMK.</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast"></div>
+  <script src="main.js"></script>
+</body>
+</html>
